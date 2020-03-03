@@ -1,0 +1,33 @@
+<p>
+    <a routerLink="/new">Add a Lead</a>
+</p>
+  <hr>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Notes</th>
+        <th>Status</th>
+        <th>Links</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let environmental_portfolio_plan of environmental_portfolio_plans">
+        <td>{{ environmental_portfolio_plan.name }}</td>
+        <td>{{ environmental_portfolio_plan.description }}</td>
+        <td>{{ environmental_portfolio_plan.notes }}</td>
+        <td>{{ environmental_portfolio_plan.status }}</td>
+        <td>{{ environmental_portfolio_plan.links }}</td>
+        <td>
+          <button (click)="editEnvironmental_Portfolio_Plan(environmental_portfolio_plan._id)">
+            Edit
+          </button>
+          <button (click)="deleteEnvironmental_Portfolio_Plan(environmental_portfolio_plan._id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

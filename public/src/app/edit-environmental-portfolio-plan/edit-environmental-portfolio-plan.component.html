@@ -1,0 +1,32 @@
+<p>
+    <a routerLink="/">Home</a>
+</p>
+<p *ngIf="errorMsg">{{ errorMsg }}</p>
+<form *ngIf="environmental_portfolio_planToEdit !== null" (submit)="handleSubmit()">
+  <div>
+    <label>Name </label>
+    <input type="text" name="name" [(ngModel)]="environmental_portfolio_planToEdit.name">
+  </div>
+  <div>
+    <label>Description </label>
+    <input type="text" name="description" [(ngModel)]="environmental_portfolio_planToEdit.description">
+  </div>
+  <div>
+    <label>Notes </label>
+    <input type="text" name="notes" [(ngModel)]="environmental_portfolio_planToEdit.notes">
+  </div>
+  <div>
+    <label>Status </label>
+    <input type="text" name="status" [(ngModel)]="environmental_portfolio_planToEdit.status">
+  </div>
+  <div>
+    <label>Links </label>
+    <input type="text" name="links" [(ngModel)]="environmental_portfolio_planToEdit.links">
+  </div>
+  <button type="button" (click)="handleCancel()">
+    Cancel
+  </button>
+  <button>
+    Submit
+  </button>
+</form>
